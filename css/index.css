@@ -68,11 +68,11 @@ body {
 .cell:hover {}
 
 .type_-1 {
-    background-image: url(/images/-1.svg);
+    background-image: url(../images/-1.svg);
 }
 
 .type_1 {
-    background-image: url(/images/1.svg);
+    background-image: url(../images/1.svg);
 }
 
 .canArea {
