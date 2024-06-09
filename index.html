@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>chess</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
-    <p>this is a test</p>
+    <div id="app">
+        <div :class="`chessboard`">
+            <div :class="`tissue ${(tissueIndex==canArea || canArea == -1 )?`canArea`:''} ${(tissueIndex==nextCanArea || nextCanArea == -1)?`next_${turn*-1}`:''}`"
+                v-for="(tissue, tissueIndex) in data" :key="tissueIndex">
+                <div :class="`cell type_${cell}`" v-for="(cell, cellIndex) in tissue" :key="cellIndex"
+                    @click="sign(tissueIndex,cellIndex)" @mouseenter="next(tissueIndex,cellIndex)"
+                    @mouseleave="clearNext()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
+
+
 </html>

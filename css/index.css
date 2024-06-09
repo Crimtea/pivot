@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #333;
+    user-select: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #F7F8FC;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.chessboard {
+    width: 500px;
+    height: 500px;
+    max-width: 92vw;
+    max-height: 92vw;
+    background-color: #fff;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw gray;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tissue {
+    width: calc(1/3 * 100%);
+    height: calc(1/3 * 100%);
+    box-sizing: border-box;
+    border: 1px solid #85CE61;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    transition: all .2s ease;
+}
+
+.cell {
+    width: calc(1/3 * 100%);
+    height: calc(1/3 * 100%);
+    box-sizing: border-box;
+    border: 1px solid #85CE61;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: 80% 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transition: all .2s ease;
+}
+
+.cell:hover {}
+
+.type_-1 {
+    background-image: url(/images/-1.svg);
+}
+
+.type_1 {
+    background-image: url(/images/1.svg);
+}
+
+.canArea {
+    background-color: #85CE6152;
+}
+
+.next_1 {
+    background-color: #4285F452;
+}
+
+.next_-1 {
+    background-color: #EA433552;
+}
