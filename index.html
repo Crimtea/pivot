@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>chess</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <div id="app">
-        <div :class="`chessboard`">
-            <div :class="`tissue ${(tissueIndex==canArea || canArea == -1 )?`canArea`:''} ${(tissueIndex==nextCanArea || nextCanArea == -1)?`next_${turn*-1}`:''}`"
+    <div id="Crimtea">
+        <div :class="`chessboard pre_${turn} ${end?'win':''}`">
+            <div :class="`tissue ${(tissueIndex==canArea || canArea == -1 )?`canArea`:''} ${(tissueIndex==nextCanArea || nextCanArea == -1)?`next_${turn*-1}`:''} ${(tissue[0]==undefined)?'end':''}`"
                 v-for="(tissue, tissueIndex) in data" :key="tissueIndex">
                 <div :class="`cell type_${cell}`" v-for="(cell, cellIndex) in tissue" :key="cellIndex"
                     @click="sign(tissueIndex,cellIndex)" @mouseenter="next(tissueIndex,cellIndex)"
                     @mouseleave="clearNext()">
                 </div>
             </div>
+            <div class="author">Tic-Tac-Toe @{{ author }}</div>
         </div>
     </div>
     <script src="./js/vue.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
-
 
 </html>

@@ -14,15 +14,15 @@ body {
     background-color: #F7F8FC;
 }
 
-#app {
+#Crimtea {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-
 .chessboard {
+    position: relative;
     width: 500px;
     height: 500px;
     max-width: 92vw;
@@ -34,9 +34,11 @@ body {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-
 .tissue {
+    position: relative;
     width: calc(1/3 * 100%);
     height: calc(1/3 * 100%);
     box-sizing: border-box;
@@ -44,10 +46,11 @@ body {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     transition: all .2s ease;
 }
-
 .cell {
     width: calc(1/3 * 100%);
     height: calc(1/3 * 100%);
@@ -65,24 +68,75 @@ body {
     transition: all .2s ease;
 }
 
+
 .cell:hover {}
 
-.type_-1 {
+.pre_-1 .canArea .cell:hover {
+    background-color: #EA433552;
     background-image: url(../images/-1.svg);
 }
 
-.type_1 {
+.pre_1 .canArea .cell:hover {
+    background-color: #4285F452;
     background-image: url(../images/1.svg);
 }
 
-.canArea {
+.type_-1 {
+    background-image: url(../images/-1.svg) !important;
+}
+
+.type_1 {
+    background-image: url(../images/1.svg) !important;
+}
+
+.canArea .cell {
     background-color: #85CE6152;
 }
 
-.next_1 {
+.next_1 .cell {
     background-color: #4285F452;
 }
 
-.next_-1 {
+.next_-1 .cell {
     background-color: #EA433552;
+}
+
+.end .cell:nth-child(5) {
+    width: 100%;
+    height: 100%;
+}
+
+.end .cell:not(:nth-child(5)) {
+    display: none;
+}
+
+.win .tissue:nth-child(5) {
+    width: 100%;
+    height: 100%;
+}
+
+.win .tissue:not(:nth-child(5)) {
+    display: none;
+}
+
+.win .cell:nth-child(5) {
+    background-color: transparent !important;
+    width: 100%;
+    height: 100%;
+}
+
+.win .cell:not(:nth-child(5)) {
+    display: none;
+}
+
+.author {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+    color: #666;
+    padding: 7px 2vw;
+    background-color: #fff;
+    box-shadow: 0 0 7px gray;
+    border-radius: 7px;
 }

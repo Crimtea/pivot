@@ -1,11 +1,24 @@
+let author = '6721143105810921163101897';
+let list = author.split('2')
+let temp = []
+for (let i in list) {
+    temp.push(...list[i].split('3'))
+}
+list = [];
+for (let i in temp) {
+    list.push(...temp[i].split('8'))
+}
+console.log(list);
+author = ''
+for (let i in list) {
+    author += String.fromCharCode(Number(list[i]))
+}
 var app = new Vue({
-    el: "#app",
+    el: `#${author}`,
     data: {
-        // 可选区域
+        author: author,
         canArea: -1,
-        // 下一个可选区域
         nextCanArea: null,
-        // 存储原数据
         data: [
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -17,11 +30,11 @@ var app = new Vue({
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
         ],
-        // 初始玩家
+        dataWatcher: [0, 0, 0, 0, 0, 0, 0, 0, 0],
         turn: -1,
+        end: false,
     },
     methods: {
-        // 标记
         sign(tissueIndex, cellIndex) {
             if (tissueIndex != this.canArea && this.canArea != -1) {
                 return 0
@@ -37,11 +50,15 @@ var app = new Vue({
             this.canArea = this.nextCanArea;
             this.clearNext();
         },
-        // 检查
         check(tissueIndex, cellIndex, test) {
-            let data = [...this.data[tissueIndex]];
-            if (test) {
-                data.splice(cellIndex, 1, this.turn)
+            let data = [];
+            if (typeof tissueIndex === 'number') {
+                data = [...this.data[tissueIndex]];
+                if (test) {
+                    data.splice(cellIndex, 1, this.turn)
+                }
+            } else {
+                data = [...this.dataWatcher];
             }
             let i = cellIndex;
             let u = i - ((i / 3 < 1) ? -6 : 3);
@@ -66,15 +83,15 @@ var app = new Vue({
             }
             return false
         },
-        // 替换
         occupy(tissueIndex) {
-            let sign = [];
-            for (let i = 0; i < 9; i++) {
-                sign.push(this.turn);
+            let sign = [, , , , this.turn, , , , ,];
+            this.data.splice(tissueIndex, 1, sign);
+            this.dataWatcher.splice(tissueIndex, 1, this.turn);
+            if (this.check(true, tissueIndex)) {
+                this.data[4].splice(4, 1, this.turn)
+                this.end = true;
             }
-            this.data.splice(tissueIndex, 1, sign)
         },
-        // 待选下一个
         next(tissueIndex, cellIndex) {
             if (this.data[tissueIndex][cellIndex] != 0) {
                 return 0
@@ -96,7 +113,6 @@ var app = new Vue({
             }
             this.nextCanArea = cellIndex;
         },
-        // 取消待选下一个
         clearNext() {
             this.nextCanArea = null;
         },
