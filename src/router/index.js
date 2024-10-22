@@ -5,8 +5,13 @@ import pages from './pages.js'
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //   path: '*',
+  //   name: 'not-found',
+  //   component: () => import('../views/not-found.vue')
+  // },
   {
-    path: '/',
+    path: '*',
     name: 'index',
     component: () => import('../views/index.vue'),
     redirect: '/home',
