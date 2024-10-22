@@ -72,7 +72,7 @@ export default {
     >.list {
         width: 100%;
         height: 100%;
-        background-color: var(--color-gray-300);
+        background-color: var(--color-black-9);
 
         >div {
             display: flex;
@@ -88,16 +88,18 @@ export default {
             }
 
             >div {
-                background-color: var(--color-gray-500);
                 color: var(--color-black);
                 flex-shrink: 0;
                 height: 50px;
                 display: flex;
                 align-items: center;
                 overflow: hidden;
+                color: var(--color-black);
+                color: var(--color-white);
 
                 &:hover {
-                    background-color: var(--color-gray-600);
+                    // background-color: var(#769B31);
+                    background-color: #769B31;
                 }
 
                 >.icon {

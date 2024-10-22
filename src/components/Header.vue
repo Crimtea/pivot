@@ -34,7 +34,7 @@ export default {
   display: flex;
   box-sizing: border-box;
   padding: 0 24px;
-  background: linear-gradient(to right, #2e3cb3, #222653);
+  background: linear-gradient(164deg, var(--color-black), var(--color-primary-5));
 
   >div {
     width: calc(100% / 3);
