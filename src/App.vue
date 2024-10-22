@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <!-- <Header></Header> -->
+    <div class="components">
+      <Info></Info>
+    </div>
   </div>
 </template>
 
@@ -10,17 +14,20 @@ export default {
 
   data() {
     return {
-      
+
     };
   },
 
   mounted() {
-    
+
   },
 
   methods: {
-    
+
   },
+  components: {
+    Info: () => import('@/components/base/info.vue')
+  }
 };
 </script>
 <style src="@/styles/index.scss" lang="scss"></style>

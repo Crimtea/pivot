@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkpivot"]=self["webpackChunkpivot"]||[]).push([[735],{2735:function(t,e,n){n.r(e),n.d(e,{default:function(){return o}});var u=function(){var t=this,e=t._self._c;return e("div",[t._v(" 日志 ")])},r=[],s={name:"PivotIndex",data(){return{}},mounted(){this.$message("123","primary")},methods:{}},i=s,a=n(1656),l=(0,a.A)(i,u,r,!1,null,null,null),o=l.exports}}]);
+//# sourceMappingURL=735.f42571e1.js.map

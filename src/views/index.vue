@@ -42,7 +42,7 @@ export default {
 
         >.content {
             flex-grow: 1;
-            background-color: var(--color-conntent-bg);
+            background-color: var(--color-bg);
             height: calc(100% - 20px);
             margin: 10px;
             padding: 10px;

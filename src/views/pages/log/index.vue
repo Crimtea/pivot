@@ -10,16 +10,16 @@ export default {
 
   data() {
     return {
-      
+
     };
   },
 
   mounted() {
-    
+    this.$message('123', 'primary');
   },
 
   methods: {
-    
+
   },
 };
 </script>

@@ -25,9 +25,17 @@ export default [
         name: 'demo',
         component: () => import('../views/pages/demo/index.vue'),
         meta: {
-            title: '签到日历',
+            title: '演示',
             for: 'Demo',
-            subnum: 1,
+            subnum: 2,
+        }
+    },
+    {
+        path: '/sign-in-record',
+        name: 'sign-in-record',
+        component: () => import('../views/pages/demo/signInRecord.vue'),
+        meta: {
+            title: '签到日历',
         }
     },
     {
