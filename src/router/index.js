@@ -5,13 +5,8 @@ import pages from './pages.js'
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '*',
-  //   name: 'not-found',
-  //   component: () => import('../views/not-found.vue')
-  // },
   {
-    path: '*',
+    path: '/',
     name: 'index',
     component: () => import('../views/index.vue'),
     redirect: '/home',
@@ -25,7 +20,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.NODE_ENV === 'production' ? '/pivot/dist/' : process.env.BASE_URL,
   routes
 })
