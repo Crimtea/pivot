@@ -21,7 +21,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL + '/pivot/dist/',
+  // base: process.env.BASE_URL,
+  base: '/pivot/dist/',
   routes
 })
 
