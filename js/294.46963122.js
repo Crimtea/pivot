@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkpivot"]=self["webpackChunkpivot"]||[]).push([[294],{2294:function(n,t,e){e.r(t),e.d(t,{default:function(){return a}});var u=function(){var n=this,t=n._self._c;return t("div",[n._v("home ")])},r=[],l={name:"PivotIndex",data(){return{}},mounted(){},methods:{}},o=l,i=e(1656),s=(0,i.A)(o,u,r,!1,null,null,null),a=s.exports}}]);
-//# sourceMappingURL=294.46963122.js.map
