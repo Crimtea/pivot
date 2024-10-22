@@ -1,12 +1,13 @@
 <template>
     <div class="sidebar">
         <div class="list">
-            <div class="show" v-for="(item, index) in pages" :key="index">
-                <div @click="beActive(item)">
+            <div :class="{ show: item.show }" v-for="(item, index) in pages" :key="index">
+                <div @click="changeActive(item)" :class="{ group: item.group, active: $route.path == item.path }">
                     <div class="icon"></div>
                     {{ item.group || item.title }}
                 </div>
-                <div v-for="(subItem, subIndex) in item.list" :key="subIndex">
+                <div :class="{ active: $route.path == subItem.path }" v-for="(subItem, subIndex) in item.list"
+                    :key="subIndex" @click="changeActive(subItem)">
                     <div class="icon"></div>
                     {{ subItem.title }}
                 </div>
@@ -23,7 +24,6 @@ export default {
     data() {
         return {
             pages: pages,
-            activeGroup: null,
         };
     },
 
@@ -34,11 +34,15 @@ export default {
             if (this.pages[i].meta.for) {
                 counter = this.pages[i].meta.subnum || 1;
                 temp.push({
+                    show: false,
                     group: this.pages[i].meta.for,
                     list: [],
                 })
             }
             if (counter) {
+                if (this.$route.path == this.pages[i].path) {
+                    console.log(temp[temp.length - 1].show = true);
+                }
                 temp[temp.length - 1].list.push({
                     path: this.pages[i].path,
                     title: this.pages[i].meta.title,
@@ -55,11 +59,11 @@ export default {
     },
 
     methods: {
-        beActive(item) {
-            console.log(item);
+        changeActive(item) {
             if (item.group) {
-                this.activeGroup = item.group;
-                console.log(this.activeGroup);
+                item.show = !item.show;
+            } else {
+                this.$router.push(item.path);
             }
         }
     },
@@ -67,46 +71,81 @@ export default {
 </script>
 <style lang="scss" scoped>
 .sidebar {
-    width: 200px;
+    width: 180px;
+    height: 100%;
 
     >.list {
         width: 100%;
         height: 100%;
-        background-color: var(--color-black-9);
+        background-color: var(--color-sidebar-bg);
+        overflow-x: hidden;
+        padding: 0 !important;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         >div {
             display: flex;
             flex-direction: column;
-            height: 50px;
             overflow: hidden;
+            height: 40px;
             transition: all .3s ease;
             cursor: pointer;
+            interpolate-size: allow-keywords;
 
             &.show {
                 height: auto;
-                interpolate-size: allow-keywords;
+
+                >.group {
+                    >.icon {
+                        height: 11px;
+                    }
+                }
             }
 
             >div {
-                color: var(--color-black);
+                user-select: none;
                 flex-shrink: 0;
-                height: 50px;
                 display: flex;
+                height: 40px;
                 align-items: center;
                 overflow: hidden;
-                color: var(--color-black);
-                color: var(--color-white);
+                color: var(--color-sidebar-item-font);
 
-                &:hover {
-                    // background-color: var(#769B31);
-                    background-color: #769B31;
+                &.active {
+                    background-color: var(--color-primary);
+                }
+
+                &.group {
+                    background-color: var(--color-sidebar-group-bg);
+
+                    >.icon {
+                        width: 11px;
+                        height: 2px;
+                        margin: 0 7px;
+                        transition: height .2s;
+                    }
+                }
+
+                &.group~div {
+                    >.icon {
+                        margin: 0 7px 0 24px;
+                    }
+                }
+
+                &:not(.group) {
+                    >.icon {
+                        width: 7px;
+                        height: 7px;
+                        margin: 0 9px;
+                        border-radius: 50%;
+                    }
                 }
 
                 >.icon {
-                    width: 22px;
-                    height: 22px;
-                    margin: 0 7px;
-                    background-color: red;
+                    transition: height .2s;
+                    background-color: var(--color-sidebar-item-font);
                 }
             }
         }

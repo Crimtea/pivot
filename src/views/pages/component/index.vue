@@ -1,6 +1,6 @@
 <template>
   <div>
-    首页
+    组件
   </div>
 </template>
 

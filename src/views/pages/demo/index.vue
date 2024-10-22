@@ -1,6 +1,6 @@
 <template>
   <div>
-    首页
+    演示
   </div>
 </template>
 

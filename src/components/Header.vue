@@ -30,31 +30,37 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header {
+  flex-shrink: 0;
   height: 60px;
   display: flex;
   box-sizing: border-box;
-  padding: 0 24px;
-  background: linear-gradient(164deg, var(--color-black), var(--color-primary-5));
+  background: linear-gradient(183deg, var(--color-header-bg-0), var(--color-header-bg-1));
+
+  
 
   >div {
     width: calc(100% / 3);
     height: 100%;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
   }
 
   >.left {
+    width: 180px;
+    padding-left: 20px;
     gap: 7px;
+    user-select: none;
 
     >img {
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       object-fit: contain;
     }
 
     >span {
-      font-size: 22px;
-      line-height: 32px;
+      font-size: 20px;
+      line-height: 20px;
       color: var(--color-white);
     }
   }

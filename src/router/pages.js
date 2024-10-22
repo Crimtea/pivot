@@ -5,66 +5,40 @@ export default [
         component: () => import('../views/pages/home/index.vue'),
         meta: {
             title: '首页',
-            for: '首页看板',
-            subnum: 2,
+            for: '首页',
+            subnum: 1,
         }
     },
     {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
+        path: '/component',
+        name: 'component',
+        component: () => import('../views/pages/component/index.vue'),
         meta: {
-            title: '首页2'
+            title: '组件',
+            for: '组件',
+            subnum: 1,
+        }
+    },
+    // demo
+    {
+        path: '/demo',
+        name: 'demo',
+        component: () => import('../views/pages/demo/index.vue'),
+        meta: {
+            title: '签到日历',
+            for: 'Demo',
+            subnum: 1,
         }
     },
     {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
+        path: '/log',
+        name: 'log',
+        component: () => import('../views/pages/log/index.vue'),
         meta: {
-            title: '首页3',
-            for: '首页数据',
-            subnum: 3
+            title: '日志',
         }
     },
-    {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
-        meta: {
-            title: '首页4'
-        }
-    },
-    {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
-        meta: {
-            title: '首页5'
-        }
-    },
-    {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
-        meta: {
-            title: '首页6'
-        }
-    },
-    {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
-        meta: {
-            title: '首页3'
-        }
-    },
-    {
-        path: '/home3',
-        name: 'home',
-        component: () => import('../views/pages/home/index.vue'),
-        meta: {
-            title: '首页3'
-        }
-    }
+
+
+
 ]

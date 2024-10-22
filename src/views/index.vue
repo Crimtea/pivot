@@ -37,11 +37,19 @@ export default {
     flex-direction: column;
 
     >.main {
-        flex-grow: 1;
+        height: calc(100% - 60px);
         display: flex;
 
         >.content {
             flex-grow: 1;
+            background-color: var(--color-conntent-bg);
+            height: calc(100% - 20px);
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 3px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 0 2px var(--color-border);
         }
     }
 }
