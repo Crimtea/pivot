@@ -21,7 +21,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'hash',
-  base: process.env.NODE_ENV === 'production' ? '/pivot/dist/' : process.env.BASE_URL,
+  base: process.env.NODE_ENV === 'production' ? '/pivot/' : process.env.BASE_URL,
   routes
 })
 
