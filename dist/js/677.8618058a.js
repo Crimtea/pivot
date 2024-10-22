@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkpivot"]=self["webpackChunkpivot"]||[]).push([[677],{9677:function(l,u,e){e.r(u);var n,t,p=e(1656),s={},a=(0,p.A)(s,n,t,!1,null,null,null);u["default"]=a.exports}}]);
+//# sourceMappingURL=677.8618058a.js.map
