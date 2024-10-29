@@ -41,7 +41,7 @@ export default {
             }
             if (counter) {
                 if (this.$route.path == this.pages[i].path) {
-                    console.log(temp[temp.length - 1].show = true);
+                    temp[temp.length - 1].show = true;
                 }
                 temp[temp.length - 1].list.push({
                     path: this.pages[i].path,
