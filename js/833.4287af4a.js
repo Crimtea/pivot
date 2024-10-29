@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkpivot"]=self["webpackChunkpivot"]||[]).push([[833],{1833:function(e,n,t){t.r(n),t.d(n,{default:function(){return c}});var a=function(){var e=this,n=e._self._c;return n("div",[n("SalaryCalcer"),n("LoanCaler"),n("MyWallet")],1)},l=[],r={name:"PivotIndex",data(){return{}},mounted(){},methods:{},components:{SalaryCalcer:()=>t.e(671).then(t.bind(t,7671)),LoanCaler:()=>t.e(983).then(t.bind(t,7983)),MyWallet:()=>t.e(172).then(t.bind(t,8172))}},u=r,o=t(1656),i=(0,o.A)(u,a,l,!1,null,null,null),c=i.exports}}]);
+//# sourceMappingURL=833.4287af4a.js.map
