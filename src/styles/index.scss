@@ -29,16 +29,60 @@ body {
 }
 
 button {
+    min-height: 26px;
     border: 1px solid var(--color-border);
     background-color: var(--color-bg);
     padding: 3px 10px;
     border-radius: 3px;
+    box-sizing: border-box;
     cursor: pointer;
+    vertical-align: middle;
 
     &:hover {
         opacity: 0.8;
     }
+
+    +button {
+        margin-left: 10px;
+    }
 }
+
+input {
+    vertical-align: middle;
+    min-height: 26px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    padding: 3px 10px;
+    border-radius: 3px;
+    outline: none;
+
+    +input {
+        margin-left: 10px;
+    }
+}
+
+.__card {
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    box-shadow: 0 0 3px var(--color-shadow);
+
+    +.__card {
+        margin-top: 10px;
+    }
+}
+
+.__title {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+
 
 .primary {
     color: var(--color-primary-6);

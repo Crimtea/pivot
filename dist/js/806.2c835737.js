@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkpivot"]=self["webpackChunkpivot"]||[]).push([[806],{7806:function(t,n,e){e.r(n),e.d(n,{default:function(){return h}});var u=function(){var t=this,n=t._self._c;return n("div",[t._v(" "+t._s(t.data)+" ")])},r=[],o={name:"PivotSignCalendar",data(){return{month:null}},mounted(){this.month=this.getCurrentMonth()},methods:{getCurrentMonth(){const t=new Date,n=t.getMonth()+1;return n}}},a=o,l=e(1656),s=(0,l.A)(a,u,r,!1,null,null,null),h=s.exports}}]);
+//# sourceMappingURL=806.2c835737.js.map

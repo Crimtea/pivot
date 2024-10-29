@@ -54,6 +54,7 @@ export default {
     border-radius: 7px;
     position: absolute;
     left: 50%;
+    transform: translateX(-50%);
     transition: all .3s;
     top: 5px;
     opacity: 0;

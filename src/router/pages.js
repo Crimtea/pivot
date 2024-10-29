@@ -38,6 +38,34 @@ export default [
             title: '签到日历',
         }
     },
+
+    // test
+    {
+        path: '/gloveCompartment',
+        name: 'gloveCompartment',
+        component: () => import('../views/pages/gloveCompartment/index.vue'),
+        meta: {
+            title: '杂物箱',
+            for: '杂物箱',
+            subnum: 3,
+        }
+    },
+    {
+        path: '/file-tree',
+        name: 'file-tree',
+        component: () => import('../views/pages/gloveCompartment/fileTree.vue'),
+        meta: {
+            title: '文件树',
+        }
+    },
+    {
+        path: '/Sign-calendar',
+        name: 'Sign-calendar',
+        component: () => import('../views/pages/gloveCompartment/SignCalendar.vue'),
+        meta: {
+            title: '签到日历',
+        }
+    },
     {
         path: '/log',
         name: 'log',
@@ -46,7 +74,4 @@ export default [
             title: '日志',
         }
     },
-
-
-
 ]

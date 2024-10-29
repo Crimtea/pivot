@@ -73,6 +73,7 @@ export default {
 .sidebar {
     width: 180px;
     height: 100%;
+    flex-shrink: 0;
 
     >.list {
         width: 100%;
