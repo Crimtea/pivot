@@ -1,6 +1,6 @@
 <template>
     <div class="my-wallet __card">
-        <div class="__title">我的钱包</div>
+        <!-- <div class="__title">我的钱包</div> -->
         <div class="content">
             <div class="row">
                 <div class="title">总计：</div>
@@ -29,8 +29,8 @@ export default {
 
     data() {
         return {
-            data: '',
-            list: [{"name":"微信零钱","balance":"7.95"},{"name":"微信零钱通","balance":"0.17"},{"name":"农业银行","balance":"2518.80"},{"name":"建设银行","balance":"83.26"},{"name":"工商银行","balance":"10"},{"name":"股票","balance":"2630.50"},{"name":"黄金","balance":"419.14"},{"name":"待发工资","balance":"6600"},{"name":"QQ钱包","balance":"82.66"},{"name":"现金","balance":"160"}]
+            data: '微信零钱:0.95,微信零钱通:0.17,农业银行:10801.69,建设银行:83.26,工商银行:10,黄金:409.29,QQ钱包:82.66,现金:160',
+            list: [],
         };
     },
     computed: {
@@ -39,16 +39,19 @@ export default {
             return temp.toFixed(2);
         }
     },
-    mounted() {
-
-    },
-
     methods: {
         generate() {
-            this.data = JSON.stringify(this.list);
+            let temp = [];
+            this.list.forEach(item => {
+                temp.push(`${item.name}:${item.balance}`)
+            })
+            this.data = temp.join();
         },
         parse() {
-            this.list = JSON.parse(this.data);
+            this.list = this.data.split(',').map(item => {
+                let [name, balance] = item.split(':');
+                return { name, balance }
+            })
         },
     },
 };

@@ -3,7 +3,7 @@
         <div class="left"></div>
         <div class="mid">
             <div class="logo">pivot</div>
-            <input type="password" v-model="password">
+            <input type="password" v-model="password" @keyup.enter="login()">
             <button @click="login()">Login</button>
         </div>
         <div class="right"></div>
